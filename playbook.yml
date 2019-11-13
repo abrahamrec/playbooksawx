@@ -20,5 +20,5 @@
      dest: /var/www/html/index.html
   - name: Validate httpd Installation 
     debug: 
-     msg: "Installation OK"
+     msg: "Installation OK, on {{ansible_fqdn}} with ip address {{ ansible_default_ipv4.address }}"
     when: result.rc == 0
