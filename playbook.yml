@@ -5,7 +5,7 @@
   - name: Install httpd
     yum:
      name: httpd
-     state: install
+     state: latest
     register: result
   - name: Activate httpd
     service:
