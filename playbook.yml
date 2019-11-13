@@ -17,7 +17,7 @@
      content: my is also node {{ansible_fqdn}}
      mode: 0644
      force: no
-     dest: /var/www/html/
+     dest: /var/www/html/index.html
   - name: Validate httpd Installation 
     debug: 
      msg: "Installation OK"
