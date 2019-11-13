@@ -22,3 +22,10 @@
     debug: 
      msg: "Installation OK, on {{ansible_fqdn}} with ip address {{ ansible_default_ipv4.address }}"
     when: result.rc == 0
+  - name: Validate index.html in {{ansible_fqdn}}
+    uri:
+     url: http://{{ ansible_fqdn }}/index.html
+     method: GET
+     status_code: 200
+    when: copy_ok is succeeded
+    register: index_html
