@@ -11,3 +11,9 @@
       name: httpd
       state: started
       enabled: yes
+  - name: Create file /etc/ansible_abort.txt
+    copy:
+     content: my is also node {{ansible_fqdn}}
+     mode: 0644
+     force: no
+     dest: /etc/ansible_abort.txt
