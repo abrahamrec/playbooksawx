@@ -27,5 +27,3 @@
      url: http://{{ ansible_fqdn }}/index.html
      method: GET
      status_code: 200
-    when: copy_ok is succeeded
-    register: index_html
