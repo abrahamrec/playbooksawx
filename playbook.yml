@@ -6,6 +6,7 @@
     yum:
      name: httpd
      state: installed
+    register: result
   - name: Activate httpd
     service:
       name: httpd
@@ -17,3 +18,7 @@
      mode: 0644
      force: no
      dest: /etc/ansible_abort.txt
+  - name: Validate httpd Installation 
+    debug: 
+     msg: "Installation OK"
+    when: result.rc == 0
